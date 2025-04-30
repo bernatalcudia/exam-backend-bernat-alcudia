@@ -12,6 +12,33 @@
 
 
 
+const PORT = 8000
+
+const express = require('express')
+const cors = require('cors')
+
+const app = express()
+
+app.use(cors())
+app.use(express.json())
+
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+}
+
+const variedFood = ['Chocolate', 'Sushi', 'Cheese Burger']
+
+app.get('/food', (req, res) => {
+    const randomFood = getRandomInt(3)
+
+    res.status(200).send(variedFood[randomFood])
+})
+
+
+
+app.listen(PORT, () => {
+    console.log(`App is boot in port:${PORT}`)
+})
 
 
 
