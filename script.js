@@ -82,7 +82,23 @@ app.listen(PORT, () => {
 // }
 
 
+let arrayNum = []
 
+app.post('/minmax', (req, res) => {
+    const numberUser = req.body.number
+
+    let maxNumber = 0
+    let minNumber = 0
+
+
+    arrayNum.push(numberUser)
+
+
+    maxNumber = Math.max(...arrayNum)
+    minNumber = Math.min(...arrayNum)
+
+    res.status(200).send(`Min number is: ${minNumber},Max number is: ${maxNumber}`)
+})
 
 
 
