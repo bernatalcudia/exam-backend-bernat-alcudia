@@ -108,13 +108,30 @@ app.post('/minmax', (req, res) => {
 
 // ...
 
-// app.put('/users', (res, req) => {
+// app.delete('/users/:id', (req, res) => {
 //     const userId = req.params.id;
-//     const sql = `DELETE FROM users WHERE id=${userID}`;
+//     let sql = `DELETE FROM users WHERE id=${userID}`;
 //     db.query(sql, (error, result) => {
 //         if(error) throw error;
+// if (result.affectedRows > 0) {
 //         res.send(`User ${userId} deleted from the db.`);
+//       } else {
+//         res.status(404).send("User not found");
+//       }
 //     })
 // })
 
 // ...
+
+// app.delete("/cities/:id", (req, res) => {
+//     const id = req.params.id;
+//     let sql = `DELETE FROM cities WHERE id=${id};`;
+//     db.query(sql, (err, result) => {
+//       if (err) throw err;
+//       if (result.affectedRows > 0) {
+//         res.send("City deleted...");
+//       } else {
+//         res.status(404).send("City not found");
+//       }
+//     });
+//   });
